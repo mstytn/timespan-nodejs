@@ -43,7 +43,18 @@ module.exports = class TimeSpan {
         }
         return this.setStart();
     }
-
+     /**
+     * Resets TimeSpan to first state and clear all logs.
+     * @returns {TimeSpan} self
+     */
+    reset() {
+        if (this.enabled) {
+            this.#startTime = new Date()
+            this.#laps = []
+            this.#logs = []
+        }
+        return this
+    }
     /**
      * Calculates the elapsed time and adds to laps and reset the start time.
      * @returns {TimeSpan} self
