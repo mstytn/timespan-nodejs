@@ -51,7 +51,7 @@ module.exports = class TimeSpan {
         if (this.enabled) {
             this.#startTime = new Date()
             this.#laps = []
-            this.#logs = []
+            this.log = []
         }
         return this
     }
